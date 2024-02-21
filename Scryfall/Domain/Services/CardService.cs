@@ -7,7 +7,7 @@ namespace Scryfall.Domain.Services;
 
 public class CardService : ScryfallService, ICardService
 {
-    public CardService(IScryfallClient scryfallClient) : base(scryfallClient)
+    internal CardService(IScryfallClient scryfallClient) : base(scryfallClient)
     {
     }
 
@@ -41,9 +41,9 @@ public class CardService : ScryfallService, ICardService
         };
     }
 
-    public async Task<IEnumerable<CardObject>> GetAllCardsAsync(CardQuery query, Unqiue unique = Unqiue.Art,
-        Order order = Order.Name,
-        Direction direction = Direction.Auto, bool extras = false, bool multiLingual = false, bool variations = false)
+    public async Task<IEnumerable<CardObject?>> GetAllCardsAsync(CardQuery query, Unqiue unique = Unqiue.Cards,
+	    Order order = Order.Name,
+	    Direction direction = Direction.Auto, bool extras = false, bool multiLingual = false, bool variations = false)
     {
         const string endpoint = "cards/search";
         var queryString = BuildQueryString(query);

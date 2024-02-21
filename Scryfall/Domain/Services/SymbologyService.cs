@@ -5,7 +5,7 @@ namespace Scryfall.Domain.Services;
 
 public class SymbologyService : ScryfallService, ISymbologyService
 {
-    public SymbologyService(IScryfallClient scryfallClient) : base(scryfallClient)
+    internal SymbologyService(IScryfallClient scryfallClient) : base(scryfallClient)
     {
     }
 

@@ -5,7 +5,7 @@ namespace Scryfall.Domain.Services;
 
 public class CatalogService : ScryfallService, ICatalogService
 {
-    public CatalogService(IScryfallClient scryfallClient) : base(scryfallClient)
+    internal CatalogService(IScryfallClient scryfallClient) : base(scryfallClient)
     {
     }
 

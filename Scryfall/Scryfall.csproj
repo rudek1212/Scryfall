@@ -1,9 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Scryfall API services</Title>
+    <PackageId>ScryfallWrapper.Client</PackageId>
+    <Authors>Rudek</Authors>
+    <Description>Simple Scryfall api wrapper.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>scryfall, scryfall-api</PackageTags>
+    <RepositoryUrl>https://github.com/rudek1212/Scryfall</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/rudek1212/Scryfall</PackageProjectUrl>
+	<Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

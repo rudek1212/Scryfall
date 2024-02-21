@@ -5,7 +5,7 @@ namespace Scryfall.Domain.Services;
 
 public class RulingsService : ScryfallService, IRulingsService
 {
-    public RulingsService(IScryfallClient scryfallClient) : base(scryfallClient)
+    internal RulingsService(IScryfallClient scryfallClient) : base(scryfallClient)
     {
     }
 

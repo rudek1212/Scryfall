@@ -5,12 +5,12 @@ using Newtonsoft.Json;
 
 namespace Scryfall.Domain;
 
-public class ScryfallClient : IScryfallClient
+internal class ScryfallClient : IScryfallClient
 {
     private readonly HttpClient _httpClient;
     private readonly ScryfallClientConfiguration _clientConfiguration;
 
-    public ScryfallClient(
+    internal ScryfallClient(
         IHttpClientFactory clientFactory,
         IOptionsSnapshot<ScryfallClientConfiguration> config)
     {

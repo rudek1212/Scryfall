@@ -5,9 +5,9 @@ namespace Scryfall.Domain;
 
 public abstract class ScryfallService
 {
-    protected readonly IScryfallClient ScryfallClient;
+    internal readonly IScryfallClient ScryfallClient;
 
-    protected ScryfallService(IScryfallClient scryfallClient)
+    internal ScryfallService(IScryfallClient scryfallClient)
     {
         ScryfallClient = scryfallClient;
     }
