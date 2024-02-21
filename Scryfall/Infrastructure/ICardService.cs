@@ -89,6 +89,13 @@ public interface ICardService
     /// Returns a single card with the given Scryfall ID.
     /// </summary>
     Task<CardObject?> GetCardByScryfallIdAsync(Guid scryfallId);
+
+    /// <summary>
+    /// Returns all cards based on query parameters
+    /// </summary>
+    Task<IEnumerable<CardObject>> GetAllCardsAsync(CardQuery query, Unqiue unique = Unqiue.Cards,
+        Order order = Order.Name,
+        Direction direction = Direction.Auto, bool extras = false, bool multiLingual = false, bool variations = false);
 }
 public enum Order
 {
