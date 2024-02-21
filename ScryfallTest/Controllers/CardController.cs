@@ -49,4 +49,7 @@ public class CardController : ControllerBase
 
     [HttpGet("GetCardByScryfallIdAsync/{scryfallId}")]
     public async Task<IActionResult> GetCardByScryfallIdAsync([FromRoute] Guid scryfallId) => Ok(await _cardService.GetCardByScryfallIdAsync(scryfallId));
+
+    [HttpGet("GetCardBySetCode")]
+    public async Task<IActionResult> GetCardBySetCodeAsync([FromQuery] CardQuery query) => Ok(await _cardService.GetAllCardsAsync(query));
 }
