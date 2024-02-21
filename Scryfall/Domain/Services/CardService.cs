@@ -7,7 +7,7 @@ namespace Scryfall.Domain.Services;
 
 public class CardService : ScryfallService, ICardService
 {
-    internal CardService(IScryfallClient scryfallClient) : base(scryfallClient)
+    public CardService(IScryfallClient scryfallClient) : base(scryfallClient)
     {
     }
 

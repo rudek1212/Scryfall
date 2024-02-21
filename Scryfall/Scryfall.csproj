@@ -13,7 +13,7 @@
     <PackageTags>scryfall, scryfall-api</PackageTags>
     <RepositoryUrl>https://github.com/rudek1212/Scryfall</RepositoryUrl>
     <PackageProjectUrl>https://github.com/rudek1212/Scryfall</PackageProjectUrl>
-	<Version>0.1.0</Version>
+	<Version>0.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,5 +26,13 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+
+	<PropertyGroup>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 </Project>

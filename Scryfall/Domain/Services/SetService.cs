@@ -5,7 +5,7 @@ namespace Scryfall.Domain.Services;
 
 public class SetService : ScryfallService, ISetService
 {
-    internal SetService(IScryfallClient scryfallClient) : base(scryfallClient)
+    public SetService(IScryfallClient scryfallClient) : base(scryfallClient)
     {
     }
 
