@@ -41,6 +41,27 @@ public class CardService : ScryfallService, ICardService
         };
     }
 
+    public async Task<IEnumerable<CardObject>> GetAllCardsAsync(CardQuery query, Unqiue unique = Unqiue.Art,
+        Order order = Order.Name,
+        Direction direction = Direction.Auto, bool extras = false, bool multiLingual = false, bool variations = false)
+    {
+        const string endpoint = "cards/search";
+        var queryString = BuildQueryString(query);
+
+        var queryParams = new List<KeyValuePair<string, string>>
+        {
+            new ("q", queryString),
+            new ("unique", unique.ToString("G")),
+            new ("order", order.ToString("G")),
+            new ("direction", direction.ToString("G")),
+            new ("include_extras", extras.ToString()),
+            new ("include_multilingual", multiLingual.ToString()),
+            new ("include_variations", variations.ToString())
+        };
+
+        return await GetScryfallFullListResponseAsync<CardObject>(endpoint, query: queryParams.ToArray());
+    }
+
     public async Task<CardObject?> GetCardByNameAsync(string name, Naming naming, string? set = null, string? format = null, string? face = null)
     {
         const string endpoint = "cards/named";

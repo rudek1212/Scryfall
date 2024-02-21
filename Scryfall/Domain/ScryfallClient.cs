@@ -34,7 +34,7 @@ public class ScryfallClient : IScryfallClient
             "?" + string.Join("&", query.Select(p => $"{Uri.EscapeDataString(p.Key)}={Uri.EscapeDataString(p.Value)}")) :
             string.Empty;
 
-        var uri = new Uri(_clientConfiguration.BaseUrl + url + queryString);
+        var uri = new Uri(url.Contains("http") ? url : _clientConfiguration.BaseUrl + url + queryString);
 
         HttpResponseMessage response;
         if (isPost)
